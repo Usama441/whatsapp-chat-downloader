@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Chat Downloader",
+  "version": "1.0",
+  "description": "Download WhatsApp chat history",
+  "permissions": [
+    "downloads",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
